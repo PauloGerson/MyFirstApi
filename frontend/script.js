@@ -12,15 +12,10 @@ formLogin.addEventListener("submit", function (event) {
     .then((data) => data.json())
     .then((resorce) => {
       //console.log(resorce);
+      let user = resorce.find((users) => users.name === userName1);
 
-      /* const dados = resorce.produtos.find(
-        (dados) => dados.name === userName1 && dados.password === password1
-      ); */
-
-      const dados = resorce;
-
-      if (dados) {
-        console.log(dados);
+      if (user) {
+        console.log(user);
       } else {
         console.log("Dados incorretos");
       }
